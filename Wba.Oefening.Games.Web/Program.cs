@@ -20,6 +20,20 @@ app.UseRouting();
 
 app.UseAuthorization();
 //Add custom routing here
+
+//Developers
+app.MapControllerRoute(
+    name: "Showdevelopers",
+    pattern: "developers/all",
+    defaults: new { Controller = "Developers", Action = "Index" }
+    );
+app.MapControllerRoute(
+    name: "ShowDeveloper",
+    pattern: "developers/{id:int}",
+    defaults: new { Controller = "Developers", Action = "ShowDeveloper" }
+    );
+
+// Games
 app.MapControllerRoute(
     name: "Showgames",
     pattern: "games/all",
